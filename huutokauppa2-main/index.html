@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokin tässä yhtälössä mättää</title>
+</head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap');
+
+body
+{
+    margin-top: 70px;
+    background-color: #18181B;
+    text-align: center;
+}
+
+img
+{
+    width: 250px;
+    height: auto;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    color: #F1F1F1;
+    font-family: "Baloo 2";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: auto;
+}
+
+h2
+{
+    margin: auto;
+    color: #FFF;
+    font-family: "Baloo 2";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+button
+{
+    margin-top: 28px;
+    width: 264px;
+    height: 51px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 2px solid #83838B;
+    background: #232325;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s;
+}
+
+button:hover
+{
+    background-color: #2b2b2e;
+}
+
+.rotate {
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+</style>
+<body>
+    
+<img src="frög.png" alt="Girl in a jacket" class="rotate">
+<h1>frögbux huutokauppa</h1>
+<button id="Nappi" title="katso esineitä" onclick="nappi1()"><h2>katso esineitä</h2></button>
+<br>
+<button id="Nappi" title="katso esineitä" onclick="nappi2()"><h2>Kirjaudu sisään</h2></button>
+<br>
+<button id="Nappi" title="katso esineitä" onclick="nappi3()"><h2>Pelaa rahasta</h2></button>
+
+</body>
+
+<script>
+
+    function nappi1()
+    {
+        window.location.href="huutokaupat.html"
+    }
+
+    function nappi2()
+    {
+        window.location.href="kirjautuminen.html"
+    }
+
+    function nappi3()
+    {
+        window.location.href="minipelit.html"
+    }
+
+
+</script>
+
+</html>

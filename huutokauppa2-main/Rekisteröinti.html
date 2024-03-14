@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/rekisteröityminen.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap');
+    </style>
+    <title>Rekisteröinti</title>
+</head>
+<body>
+    <a href="huutokaupat.html"> 
+        <div class="exit">
+            <img src="leftsarrow.png" alt="Image 1" class="top-left">
+        </div>
+    </a>
+
+    <div class="centered">
+        <img src="frög.png" >
+    </div>
+    <div class="tekstit">
+        <h3 class="title">Rekisteröityminen</h3>
+    </div>
+
+    <div class="email-box">
+            <input type="email" class="sähköposti" placeholder="Laita se sähköposti">
+    </div>
+
+    <div class="email-box">
+        <input type="email" class="sähköposti" placeholder="Laita se sähköposti uudelleen">
+    </div>
+
+
+
+
+    <div class="tekstit">
+        <input type="password" class="salasana" placeholder="Ja se ?#@*&%! salasana">
+    </div>
+
+    <div class="tekstit">
+        <input type="password" class="salasana" placeholder="Laita vielä uudelleen se salasana">
+    </div>
+
+
+
+
+        <p id="kirjauduNappi" class="kirjaudu_nappi">Luo Tili</p>
+    </div>
+    <script>
+        const kirjauduNappi = document.getElementById("kirjauduNappi");
+
+        kirjauduNappi.addEventListener("click", function () {
+            window.location.href = "huutokaupat.html"; 
+        });
+    </script>
+</body>
+</html>

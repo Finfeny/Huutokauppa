@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huutokaupat</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+
+* {
+    font-family: 'Baloo 2';
+    color: aliceblue;
+}
+html,body
+{
+    background-color: #18181B;
+}
+.title 
+{
+    margin: 40px !important;
+    font-size: 200%;
+    font-weight: 600;
+    color:  rgb(93, 95, 98);
+    text-align: center;
+}
+.huutokaupat 
+{
+    display: grid;
+    margin: 20px;
+    row-gap: 40px;
+}
+
+.huutokaupat-row1
+{
+    grid-row: 1;
+}
+
+.huutokaupat-row2
+{
+    grid-row: 2;
+}
+
+.huutokaupat-row3
+{
+    grid-row: 3;
+}
+
+.entry
+{
+    text-align: center;
+    max-width: 85%;
+    min-width: 200px;
+    margin: 10px;
+}
+
+.huutokauppa-entry-header
+{
+    background-color: #47474F;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+}
+
+.huutokauppa-entry-footer
+{
+    background-color: #47474F;
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+
+.huutokauppa-entry-data
+{
+    background-color: #2e2e33
+}
+
+p
+{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+img
+{
+    margin-top: 10px;
+    max-width: 90%;
+    width: 180px;
+    height: 171.22px;
+}
+
+#popup
+{
+    position: fixed;
+    width: 1280px;
+    height: 720px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #18181B;
+    box-shadow: 0px 0px 23px 37px rgba(0, 0, 0, 0.25);
+    z-index: 99;
+    margin-left: 15%;
+    margin-top: 10px;
+}
+
+#popupimg
+{
+    width: 503px;
+    height: 253px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    margin-top: 48px;
+    margin-left: 73px;
+}
+
+#popuptextL
+{
+    height: 100px;
+    width: 486px;
+    margin-top: 220px;
+    margin-left: 73px;
+    color: #FFF;
+    font-family: Baloo 2;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+    float: left;
+}
+
+#popuptextR
+{
+    width: 609px;
+    height: 269px;
+    flex-shrink: 0;
+    margin-top: 0px;
+    margin-right: 20px;
+    color: #FFF;
+    font-family: Baloo 2;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    float: right;
+    border-radius: 10px;
+    border: 1px solid #83838B;
+    background: #18181B;
+    box-shadow: 0px 0px 29px 11px rgba(0, 0, 0, 0.25);
+    padding-left: 34px;
+    padding-top: 18px;
+}
+
+#popupclose
+{
+    width: 75.007px;
+    height: 3px;
+    background: #FFF;
+}
+
+.dropdown
+{
+position: absolute;
+top: 40px;
+right: 40px;
+display: inline-block;
+}
+
+.dropdown-button
+{
+    background-color: #888894;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-button .dropdown-image
+{
+    margin-right: 10px;
+}
+
+.dropdown-image
+{
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.dropdown-content
+{
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a
+{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover
+{
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content
+{
+    display: block;
+}
+
+.dropdown-image
+{
+    max-width: 100%;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.top-left
+{
+    width: 60px;
+    height: auto;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 0;
+}
+    </style>
+</head>
+<body>
+    <a href="index.html"> 
+        <div class="exit">
+            <img src="leftsarrow.png" alt="Image 1" class="top-left">
+        </div>
+    </a>
+    <div class="dropdown">
+        <button class="dropdown-button" style="color:rgb(255, 255, 255) !important; font-size: 24px !important">
+            Profiili  
+            <img class="dropdown-image" src="k.png" alt="K Image">
+        </button>
+        <div class="dropdown-content">
+            <a href="kirjautuminen.html">Kirjautuminen</a>
+            <a href="Rekisteröinti.html">Rekisteröityminen</a>
+            <a href="index.html">Kirjaudu Ulos</a>
+        </div>
+    </div>
+
+    <p class="title">Valitse kuva jonka haluat ostaa:</p>
+    <div class="huutokaupat">
+        <div id="popup" onclick="popup()" style="display:none">
+            <div id="popupimg">
+                <img src="nft/baguet.png" alt="Girl in a jacket" >
+            </div>
+            <div id="popuptextL">
+                <p>
+                    NFT NIMI (200€)
+                    <br><br>
+                    nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja
+                </p>
+            </div>
+            <div id="popuptextR">
+                <p>
+                    NFT NIMI (200€)
+                    <br><br>
+                    nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja nft tietoja
+                </p>
+            </div>
+        </div>
+        <div class="entry huutokaupat-row1" onclick="popup()">
+            <p class="huutokauppa-entry-header">
+                Baguettiii
+            </p>    
+            <p class="huutokauppa-entry-data">
+                <img src="nft/baguet.png" alt="Girl in a jacket" >
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 200€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row1" onclick="popup()">
+            <p class="huutokauppa-entry-header">
+                sinine auto
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/blue_car.png" alt="Girl in a jacket" >
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 100€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row1">
+            <p class="huutokauppa-entry-header">
+                shroomi
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/shroom.png" alt="Girl in a jacket" >
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 80€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row1">
+            <p class="huutokauppa-entry-header">
+                puu lol
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/cherry_tree.png" alt="Girl in a jacket" >
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 220€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row1">
+            <p class="huutokauppa-entry-header">
+                :3
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/fox.png" alt="Girl in a jacket" >
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 240€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row2">
+            <p class="huutokauppa-entry-header" style="background-color:gold !important; color:black">
+                baisen
+            </p>
+            <p class="huutokauppa-entry-data" style="background-color:rgb(187, 159, 0)  !important">
+                <img src="nft/gray_cat.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer" style="background-color:gold !important; color:black">
+                Nykyinen hinta: 1 000€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row2">
+            <p class="huutokauppa-entry-header">
+                toinen shroomi
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/poison_shroom.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 100€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row2">
+            <p class="huutokauppa-entry-header">
+                kivan näköinen kissa
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/brown_cat.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 250€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row2">
+            <p class="huutokauppa-entry-header">
+                Kaunis kukka
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/purple_flower.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 400€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row2">
+            <p class="huutokauppa-entry-header">
+                Paint
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/star.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 20€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row3">
+            <p class="huutokauppa-entry-header">
+                wrooom
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/green_car.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 200€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row3">
+            <p class="huutokauppa-entry-header">
+                floower
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/red_flower.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 300€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row3">
+            <p class="huutokauppa-entry-header">
+                Sun
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/sun.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 40€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row3">
+            <p class="huutokauppa-entry-header">
+                berd
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/berd.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 120€
+            </p>
+        </div>
+        <div class="entry huutokaupat-row3">
+            <p class="huutokauppa-entry-header">
+                PuUUuuuUUUUuU
+            </p>
+            <p class="huutokauppa-entry-data">
+                <img src="nft/tree.png" alt="Girl in a jacket">
+            </p>
+            <p class="huutokauppa-entry-footer">
+                Nykyinen hinta: 150€
+            </p>
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+function popup()
+{
+    alert("dksjfd")
+}
+
+</script>
+
+</html>
